@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.pyc
+*.log
+data/incoming/**
+!data/incoming/.gitkeep
+ledger/ledger.jsonl
