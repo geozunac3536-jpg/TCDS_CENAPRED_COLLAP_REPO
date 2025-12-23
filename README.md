@@ -1,134 +1,140 @@
-# Proyecto Gaia-Σ  
-### Modelo Matemático Formal de Coherencia Ecosistémica y Control Seguro
+# Proyecto Gaia-Σ — Plataforma de Evaluación de Riesgo Causal
+### Propuesta de colaboración técnica para CENAPRED
 
-**Estado:** TRL-9 (Validación operacional por analogía causal)  
-**Licencia:** CC BY 4.0  
-**Autor:** K (Arquitectura conceptual y formalización causal)  
-**Zona horaria de desarrollo:** America/Mexico_City  
-
----
-
-## 🧭 ¿Qué es este repositorio?
-
-Este repositorio contiene un **marco matemático-operativo completo** para:
-
-- Medir **coherencia ecosistémica** como una magnitud física formal.
-- Detectar **riesgo de desincronización** antes de colapsos irreversibles.
-- Ejecutar **control ambiental seguro**, reversible y auditado.
-- Permitir **colaboración institucional sin exposición interna**.
-
-No es un modelo climático tradicional.  
-No es una simulación descriptiva.  
-No es una herramienta de predicción ex post.
-
-> **Es un sistema de control por coherencia y entropía**, diseñado para operar *antes* del daño.
+**Estado:** Demostración Operativa (TRL-9 por analogía causal)  
+**Modalidad:** Ejecución local / pública, sin extracción de datos  
+**Licencia:** CC BY 4.0 (uso científico y auditoría)  
+**Autoría:** Arquitectura conceptual independiente (K)  
 
 ---
 
-## 🌍 Idea central (en una línea)
+## 1. Propósito del proyecto
 
-La estabilidad de un ecosistema puede modelarse como un **campo escalar de coherencia Σ(x,t)** cuya pérdida abrupta indica **irreversibilidad termodinámica**, no solo “impacto ambiental”.
+Este repositorio presenta una **plataforma de evaluación de riesgo causal** orientada a
+fenómenos naturales de alta complejidad (sismos, volcanes, fallas acopladas),
+**complementaria** a los modelos tradicionales de movimiento de tierra.
 
----
-
-## 🧠 Principios fundacionales
-
-- **Coherencia > Magnitud**  
-  El riesgo no es cuánta energía se libera, sino cuánta *negentropía forzada* se acumula.
-
-- **Silencio forzado como señal**  
-  Una caída persistente de entropía indica bloqueo estructural del sistema.
-
-- **Control que no puede dañar**  
-  Toda acción está restringida por:
-  - Funcionales de Lyapunov
-  - Barreras de control (CBF)
-  - Límites energéticos y espaciales
-
-- **Auditoría por diseño**  
-  Cada ejecución deja rastro criptográfico verificable.
+El objetivo es **detectar estados previos de irreversibilidad física** mediante
+métricas entrópicas y de coherencia, **antes** de que un evento se manifieste
+como ruptura macroscópica.
 
 ---
 
----
+## 2. Diferencia clave respecto a enfoques clásicos
 
-## 🔐 Filosofía de colaboración
+Los sistemas actuales evalúan principalmente:
 
-Este proyecto **no requiere acceso a sensores propietarios** para demostrar valor.
+- Magnitud liberada (Mw)
+- Aceleraciones
+- Desplazamientos
+- Intensidad observada
 
-Cualquier institución puede:
+Gaia-Σ evalúa adicionalmente:
 
-- Ejecutar el modelo **localmente**
-- Alimentarlo con **sus propios datos**
-- Verificar resultados **sin compartir información sensible**
-- Auditar cada modificación mediante hashes y commits
+- **Bloqueo entrópico**
+- **Persistencia del silencio físico**
+- **Pérdida de sincronía del sistema**
+- **Riesgo causal previo a la ruptura**
 
-> La escalada de colaboración **solo ocurre si la auditoría lo permite**.
-
----
-
-## 📊 ¿Qué mide realmente Gaia-Σ?
-
-No mide:
-- “cuánto contaminante hay”
-- “qué tan fuerte es un evento”
-
-Mide:
-- **pérdida de sincronía**
-- **compresión anormal del ruido natural**
-- **persistencia del bloqueo estructural**
-
-Esto permite **detectar el punto de no retorno antes de cruzarlo**.
+> El riesgo no se define por “qué tan fuerte será el evento”,  
+> sino por **si el sistema ya cruzó un umbral de no retorno**.
 
 ---
 
-## 🚦 Riesgo de Desincronización (resumen)
+## 3. Qué puede hacer CENAPRED con este repositorio
 
-| Indicador | Significado |
-|---------|------------|
-| Entropía espectral ↓ | Silencio forzado |
-| Energía fuera de banda ↑ | Excitación no natural |
-| Persistencia temporal | Riesgo real, no ruido |
-| Proyección modal | Salida del atractor seguro |
+Sin compartir información sensible, CENAPRED puede:
 
----
+- Ejecutar el sistema **de forma local y aislada**
+- Alimentarlo con:
+  - datos propios
+  - datos públicos
+  - datos sintéticos
+- Comparar resultados contra eventos históricos conocidos
+- Auditar:
+  - métricas
+  - código
+  - modificaciones
+  - trazabilidad criptográfica
 
-## 🛑 Garantías
-
-- El sistema **no puede ejecutar acciones destructivas**
-- Toda intervención es:
-  - local
-  - reversible
-  - limitada en energía
-- El modo seguro es dominante por construcción
+No se requiere conexión externa ni envío de datos.
 
 ---
 
-## 📜 Licencia y uso
+## 4. Arquitectura general
+Datos (locales o públicos) ↓ Módulos de Entropía y Coherencia ↓ Evaluación de Persistencia Temporal ↓ Índice de Riesgo Causal (no energético) ↓ Salida técnica auditable
+---
 
-Este repositorio se publica bajo **CC BY 4.0** para:
+## 5. Métrica central: Riesgo Causal
 
-- Investigación
-- Auditoría
-- Replicación independiente
-- Discusión institucional
+El sistema estima un **Indicador de Riesgo Causal**, basado en:
 
-El uso operativo en infraestructuras críticas requiere **acuerdos explícitos de gobernanza**.
+- Caída de entropía espectral
+- Compresión del ruido natural
+- Persistencia temporal del estado
+- Proyección fuera de modos estables
+
+Esta métrica **no reemplaza** a Mw, sino que **opera antes** de él.
 
 ---
 
-## 📬 Contacto y colaboración
+## 6. Uso institucional seguro
 
-Este proyecto está abierto a:
+- ✔ No interfiere con sistemas existentes  
+- ✔ No accede a infraestructura crítica  
+- ✔ No ejecuta acciones físicas  
+- ✔ No genera alertas públicas  
 
-- Instituciones científicas
-- Organismos de protección civil
-- Centros de investigación ambiental
-- Auditorías técnicas independientes
-
-El contacto se realiza **sin entrega previa de datos sensibles**.
+Este repositorio es **exclusivamente evaluativo**.
 
 ---
 
-> *Si este repositorio despierta curiosidad técnica, ya cumplió su función inicial.*  
-> *Si despierta incomodidad, probablemente está midiendo algo real.*
+## 7. Auditoría y trazabilidad
+
+Cada ejecución puede:
+
+- Generar hashes verificables
+- Registrar cambios por commit
+- Comparar versiones
+- Detectar modificaciones forzadas
+
+La **escalada de colaboración** está condicionada a auditoría voluntaria.
+
+---
+
+## 8. Alcance de esta fase
+
+Esta entrega corresponde a:
+
+- Validación conceptual-operativa
+- Reproducibilidad técnica
+- Comparación retrospectiva
+- Evaluación interna por CENAPRED
+
+No incluye:
+- Automatización de alertas
+- Integración en tiempo real
+- Uso operativo público
+
+---
+
+## 9. Propuesta de colaboración
+
+Se propone a CENAPRED:
+
+1. Ejecutar el sistema internamente
+2. Probarlo con casos históricos
+3. Evaluar correlación causal
+4. Decidir, sin presión externa, si existe valor institucional
+
+---
+
+## 10. Licencia
+
+Este proyecto se entrega bajo **CC BY 4.0**  
+Uso libre para investigación, evaluación y auditoría.
+
+---
+
+> *Este repositorio no busca convencer.*  
+> *Busca ser probado.*
