@@ -1,0 +1,8 @@
+{
+  "receipt_version": "0.1.0",
+  "issued_utc": "2025-12-23T19:55:09.164735Z",
+  "packet_id": "SAMPLE_D2S7B3DB1U",
+  "sha256_packet": "c0bd0af6d5eb72082a7cc4c8329ba712c4c240e3e589dec9aa000a9372e30fce",
+  "prev_ledger_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "entry_hash": "dca4cf7ec6947b17076518e5823c4f9eb74b7e583f1d3f53e2297b2edff25937"
+}
