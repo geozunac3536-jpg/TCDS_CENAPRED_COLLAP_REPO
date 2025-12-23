@@ -1,79 +1,129 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Gaia-Σ | Evaluación de Riesgo Causal</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      background:#ffffff;
-      color:#111;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height:1.6;
-      margin:0;
-    }
-    header {
-      background:#f4f4f4;
-      padding:2.5rem;
-      border-bottom:1px solid #ccc;
-    }
-    section {
-      max-width:900px;
-      margin:auto;
-      padding:2rem;
-    }
-    h1,h2 { color:#003366; }
-    footer {
-      background:#f4f4f4;
-      text-align:center;
-      padding:1.5rem;
-      font-size:0.9rem;
-      border-top:1px solid #ccc;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Gaia-Σ | Evaluación de Riesgo Causal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root {
+  --ink:#0b1a2a;
+  --gray:#6c7785;
+  --accent:#1f4fd8;
+  --bg:#ffffff;
+}
+
+body {
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+               Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height:1.7;
+}
+
+header {
+  padding:5rem 2rem 4rem;
+  max-width:900px;
+  margin:auto;
+}
+
+h1 {
+  font-size:3rem;
+  font-weight:500;
+  margin-bottom:1rem;
+}
+
+.subtitle {
+  font-size:1.2rem;
+  color:var(--gray);
+  max-width:700px;
+}
+
+section {
+  max-width:900px;
+  margin:auto;
+  padding:3rem 2rem;
+  border-top:1px solid #e5e8ef;
+}
+
+h2 {
+  font-size:1.6rem;
+  font-weight:500;
+  margin-bottom:1rem;
+}
+
+p {
+  max-width:760px;
+}
+
+.quote {
+  font-style:italic;
+  color:var(--gray);
+  margin-top:2rem;
+}
+
+.footer {
+  text-align:center;
+  padding:3rem 2rem;
+  font-size:0.9rem;
+  color:var(--gray);
+}
+</style>
 </head>
+
 <body>
 
 <header>
-  <h1>Proyecto Gaia-Σ</h1>
-  <p>Modelo formal para evaluación de riesgo causal en sistemas geofísicos</p>
+  <h1>Gaia-Σ</h1>
+  <p class="subtitle">
+    Plataforma formal para evaluación de riesgo causal en sistemas geofísicos.
+    Ejecutable de forma local, auditable y no intrusiva.
+  </p>
 </header>
 
 <section>
-  <h2>Objetivo</h2>
+  <h2>¿Qué es?</h2>
   <p>
-    Proveer a instituciones de protección civil una herramienta complementaria
-    para evaluar estados previos de irreversibilidad física en sistemas naturales.
+    Gaia-Σ es un modelo matemático y computacional que evalúa
+    estados previos de irreversibilidad física mediante
+    métricas de coherencia y entropía.
   </p>
 </section>
 
 <section>
-  <h2>Enfoque</h2>
+  <h2>¿Qué problema aborda?</h2>
   <p>
-    El sistema analiza coherencia, entropía y persistencia temporal
-    como indicadores tempranos de riesgo estructural.
+    Determinar cuándo un sistema natural ha dejado de ser reversible,
+    independientemente de la magnitud final del evento.
   </p>
 </section>
 
 <section>
   <h2>Uso institucional</h2>
   <p>
-    Gaia-Σ puede ejecutarse de forma local, sin conexión externa,
-    y sin compartir información sensible.
+    El sistema puede ejecutarse sin conexión externa,
+    sin transferencia de datos y sin integración a sistemas existentes.
   </p>
 </section>
 
 <section>
   <h2>Auditoría</h2>
   <p>
-    Cada ejecución es trazable y verificable mediante registros criptográficos
-    y control de versiones.
+    Cada ejecución es verificable.
+    Cada modificación es trazable.
+    El control permanece en manos de la institución.
+  </p>
+
+  <p class="quote">
+    “El valor de este sistema no se demuestra con palabras,
+    sino con ejecuciones silenciosas.”
   </p>
 </section>
 
-<footer>
-  <p>Licencia CC BY 4.0 · Uso científico y evaluación institucional</p>
-</footer>
+<div class="footer">
+  Licencia CC BY 4.0 · Evaluación científica · Sin obligación de adopción
+</div>
 
 </body>
 </html>
