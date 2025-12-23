@@ -1,140 +1,119 @@
-# Proyecto Gaia-Σ — Plataforma de Evaluación de Riesgo Causal
-### Propuesta de colaboración técnica para CENAPRED
+# Plataforma Gaia-Σ  
+## Evaluación de Riesgo Causal en Sistemas Geofísicos Complejos
 
-**Estado:** Demostración Operativa (TRL-9 por analogía causal)  
-**Modalidad:** Ejecución local / pública, sin extracción de datos  
-**Licencia:** CC BY 4.0 (uso científico y auditoría)  
-**Autoría:** Arquitectura conceptual independiente (K)  
-
----
-
-## 1. Propósito del proyecto
-
-Este repositorio presenta una **plataforma de evaluación de riesgo causal** orientada a
-fenómenos naturales de alta complejidad (sismos, volcanes, fallas acopladas),
-**complementaria** a los modelos tradicionales de movimiento de tierra.
-
-El objetivo es **detectar estados previos de irreversibilidad física** mediante
-métricas entrópicas y de coherencia, **antes** de que un evento se manifieste
-como ruptura macroscópica.
+**Repositorio de evaluación técnica para CENAPRED**  
+**Modalidad:** Ejecución local / pública (sin extracción de datos)  
+**Estado:** Artefacto demostrativo auditable  
+**Licencia:** CC BY 4.0  
 
 ---
 
-## 2. Diferencia clave respecto a enfoques clásicos
+## 1. Propósito
 
-Los sistemas actuales evalúan principalmente:
+Este repositorio contiene un **artefacto técnico ejecutable** cuyo objetivo es
+evaluar **riesgo causal previo** en sistemas geofísicos complejos.
 
-- Magnitud liberada (Mw)
-- Aceleraciones
-- Desplazamientos
-- Intensidad observada
+El sistema **no compite** con los modelos operativos de CENAPRED.
+Opera en un **dominio distinto**:
 
-Gaia-Σ evalúa adicionalmente:
-
-- **Bloqueo entrópico**
-- **Persistencia del silencio físico**
-- **Pérdida de sincronía del sistema**
-- **Riesgo causal previo a la ruptura**
-
-> El riesgo no se define por “qué tan fuerte será el evento”,  
-> sino por **si el sistema ya cruzó un umbral de no retorno**.
+> No evalúa la magnitud del evento,  
+> evalúa si el sistema físico ya ha entrado en un estado de **irreversibilidad**.
 
 ---
 
-## 3. Qué puede hacer CENAPRED con este repositorio
+## 2. Diferencia conceptual clave
 
-Sin compartir información sensible, CENAPRED puede:
+| Enfoque clásico | Gaia-Σ |
+|-----------------|--------|
+| Energía liberada (Mw) | Orden impuesto / neguentropía |
+| Movimiento observado | Silencio forzado del sistema |
+| Reacción posterior | Evaluación previa |
+| Dinámica mecánica | Dinámica termodinámica |
 
-- Ejecutar el sistema **de forma local y aislada**
-- Alimentarlo con:
-  - datos propios
-  - datos públicos
-  - datos sintéticos
-- Comparar resultados contra eventos históricos conocidos
-- Auditar:
-  - métricas
-  - código
-  - modificaciones
-  - trazabilidad criptográfica
-
-No se requiere conexión externa ni envío de datos.
+Gaia-Σ analiza **coherencia, entropía y persistencia temporal**
+como indicadores tempranos de ruptura necesaria.
 
 ---
 
-## 4. Arquitectura general
-Datos (locales o públicos) ↓ Módulos de Entropía y Coherencia ↓ Evaluación de Persistencia Temporal ↓ Índice de Riesgo Causal (no energético) ↓ Salida técnica auditable
----
+## 3. Qué NO hace este sistema
 
-## 5. Métrica central: Riesgo Causal
+Para claridad institucional, este repositorio:
 
-El sistema estima un **Indicador de Riesgo Causal**, basado en:
-
-- Caída de entropía espectral
-- Compresión del ruido natural
-- Persistencia temporal del estado
-- Proyección fuera de modos estables
-
-Esta métrica **no reemplaza** a Mw, sino que **opera antes** de él.
+- ❌ No emite alertas públicas  
+- ❌ No controla infraestructura  
+- ❌ No se conecta a sistemas internos  
+- ❌ No solicita datos sensibles  
+- ❌ No reemplaza protocolos existentes  
 
 ---
 
-## 6. Uso institucional seguro
+## 4. Qué SÍ permite evaluar
 
-- ✔ No interfiere con sistemas existentes  
-- ✔ No accede a infraestructura crítica  
-- ✔ No ejecuta acciones físicas  
-- ✔ No genera alertas públicas  
+- Estados de **bloqueo entrópico**
+- Persistencia del silencio físico
+- Transiciones fuera de atractores estables
+- Riesgo causal independiente de Mw
 
-Este repositorio es **exclusivamente evaluativo**.
+Todo ello **antes** de la ruptura observable.
 
 ---
 
-## 7. Auditoría y trazabilidad
+## 5. Modo de uso institucional
 
-Cada ejecución puede:
+CENAPRED puede:
 
-- Generar hashes verificables
-- Registrar cambios por commit
-- Comparar versiones
-- Detectar modificaciones forzadas
+1. Ejecutar el sistema **localmente**
+2. Alimentarlo con:
+   - datos propios
+   - datos públicos
+   - datos sintéticos
+3. Comparar resultados contra eventos históricos
+4. Auditar código, métricas y resultados
+
+No existe obligación de compartir resultados.
+
+---
+
+## 6. Auditoría y trazabilidad
+
+El diseño del repositorio permite:
+
+- Control de versiones explícito
+- Detección de modificaciones
+- Registro criptográfico de cambios
+- Comparación entre ejecuciones
 
 La **escalada de colaboración** está condicionada a auditoría voluntaria.
 
 ---
 
-## 8. Alcance de esta fase
+## 7. Alcance de esta entrega
 
-Esta entrega corresponde a:
+Esta fase corresponde exclusivamente a:
 
-- Validación conceptual-operativa
-- Reproducibilidad técnica
-- Comparación retrospectiva
-- Evaluación interna por CENAPRED
+- Evaluación técnica
+- Reproducibilidad
+- Análisis retrospectivo
+- Discusión metodológica
 
-No incluye:
-- Automatización de alertas
-- Integración en tiempo real
-- Uso operativo público
+No implica adopción operativa.
 
 ---
 
-## 9. Propuesta de colaboración
+## 8. Invitación abierta
 
-Se propone a CENAPRED:
+Este repositorio se entrega como:
 
-1. Ejecutar el sistema internamente
-2. Probarlo con casos históricos
-3. Evaluar correlación causal
-4. Decidir, sin presión externa, si existe valor institucional
+> Un objeto técnico que **puede ignorarse**  
+> o **puede probarse**  
+> sin costo institucional ni exposición.
 
----
-
-## 10. Licencia
-
-Este proyecto se entrega bajo **CC BY 4.0**  
-Uso libre para investigación, evaluación y auditoría.
+El valor se decide internamente.
 
 ---
 
-> *Este repositorio no busca convencer.*  
-> *Busca ser probado.*
+**Licencia:** CC BY 4.0  
+**Uso permitido:** investigación, evaluación, auditoría técnica
+
+> *No es una afirmación.*  
+> *Es un artefacto.*
