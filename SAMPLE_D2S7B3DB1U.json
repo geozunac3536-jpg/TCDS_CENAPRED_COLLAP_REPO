@@ -1,0 +1,40 @@
+{
+  "packet_id": "SAMPLE_D2S7B3DB1U",
+  "created_utc": "2025-12-23T00:00:00Z",
+  "license": "CC-BY-4.0",
+  "source": {
+    "org": "EXAMPLE",
+    "device_class": "accelerometer",
+    "station_id": "STA-ALIAS-01",
+    "notes": "Ejemplo sintético"
+  },
+  "event_hint": {
+    "region": "Japan",
+    "t0_utc": "2025-12-12T02:44:11Z",
+    "window_seconds": 720
+  },
+  "signals": [
+    {
+      "name": "acc_z",
+      "units": "m/s^2",
+      "t_start_utc": "2025-12-12T02:42:11Z",
+      "sample_rate_hz": 20.0,
+      "samples": [
+        0.0,
+        0.01,
+        0.02,
+        0.015,
+        0.0,
+        -0.01,
+        -0.02,
+        -0.01,
+        0.0
+      ]
+    }
+  ],
+  "integrity": {
+    "sha256_packet": "c0bd0af6d5eb72082a7cc4c8329ba712c4c240e3e589dec9aa000a9372e30fce",
+    "sha256_attachments": {},
+    "signatures": {}
+  }
+}
