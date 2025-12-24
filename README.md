@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18049613.svg)](https://doi.org/10.5281/zenodo.18049613)
 # TCDS_CENAPRED_COLLAP_REPO — Índice Operativo (Colab + Sellado)
 
 Repositorio técnico para evaluación reproducible basada en datos sísmicos públicos (USGS / IRIS).
