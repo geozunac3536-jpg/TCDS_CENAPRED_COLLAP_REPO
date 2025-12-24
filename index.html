@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>TCDS — Índice Operativo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
     body {
@@ -11,7 +11,6 @@
       background: #0e1116;
       color: #e6e6e6;
       margin: 0;
-      padding: 0;
       line-height: 1.6;
     }
     header {
@@ -20,51 +19,46 @@
     }
     h1 {
       margin: 0 0 0.5rem 0;
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       font-weight: 600;
     }
     p {
-      max-width: 820px;
-      margin: 0.5rem 0;
+      max-width: 900px;
       color: #c9c9c9;
     }
     main {
-      padding: 2rem 1.5rem;
-      max-width: 960px;
+      max-width: 1000px;
       margin: auto;
+      padding: 2rem 1.5rem;
     }
     .card {
       background: #151922;
       border: 1px solid #222;
       border-radius: 10px;
-      padding: 1.5rem;
+      padding: 1.6rem;
       margin-bottom: 1.5rem;
     }
     .card h2 {
       margin-top: 0;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-    .card p {
-      margin-bottom: 1rem;
+      font-size: 1.25rem;
     }
     .btn {
       display: inline-block;
-      padding: 0.6rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 500;
+      margin-top: 0.5rem;
+      padding: 0.6rem 1.1rem;
       background: #1f6feb;
-      color: #ffffff;
-      transition: background 0.2s ease;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 500;
     }
     .btn:hover {
       background: #388bfd;
     }
     footer {
-      padding: 1.5rem;
       border-top: 1px solid #222;
       text-align: center;
+      padding: 1.5rem;
       font-size: 0.85rem;
       color: #8b949e;
     }
@@ -82,60 +76,59 @@
 <header>
   <h1>TCDS — Índice Operativo</h1>
   <p>
-    Repositorio técnico para evaluación independiente de un sistema de análisis
-    de riesgo sísmico previo, basado en coherencia y reducción entrópica
-    sobre datos sísmicos públicos.
+    Página de entrada al repositorio técnico para evaluación independiente
+    de estados críticos previos mediante coherencia y reducción entrópica,
+    utilizando datos sísmicos públicos.
   </p>
 </header>
 
 <main>
 
   <div class="card">
-    <h2>1) Programa principal (AERC — ejecución directa)</h2>
+    <h2>1) Programa principal (AERC)</h2>
     <p>
-      Ejecuta el análisis completo en una sola corrida: ingesta de datos,
-      cálculo de métricas internas y generación de artefactos verificables.
+      Ejecuta el análisis completo en Google Colab:
+      ingesta, métricas y generación de artefactos verificables.
     </p>
     <a class="btn"
-       href="https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/code/code.py"
+       href="https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_AERC.ipynb"
        target="_blank">
        Abrir en Google Colab
     </a>
   </div>
 
   <div class="card">
-    <h2>2) Verificación de integridad</h2>
+    <h2>2) Generar sello criptográfico</h2>
     <p>
-      Permite comprobar la integridad criptográfica de los resultados
-      generados por el sistema.
+      Crea el hash de una corrida específica para asegurar trazabilidad.
     </p>
     <a class="btn"
-       href="https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/tools/verify_seal.py"
-       target="_blank">
-       Abrir verificador en Colab
-    </a>
-  </div>
-
-  <div class="card">
-    <h2>3) Generación de sello</h2>
-    <p>
-      Genera el sello criptográfico (hash) asociado a una corrida específica,
-      permitiendo trazabilidad y comparación entre ejecuciones.
-    </p>
-    <a class="btn"
-       href="https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/tools/make_seal.py"
+       href="https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_make_seal.ipynb"
        target="_blank">
        Abrir generador de sello
     </a>
   </div>
 
   <div class="card">
-    <h2>Estructura mínima del repositorio</h2>
+    <h2>3) Verificar integridad</h2>
     <p>
-      <code>/code</code> — programa principal<br/>
-      <code>/tools</code> — sellado y verificación<br/>
-      <code>/schema</code> — esquema de datos<br/>
-      <code>/ledger</code> — registro de ejecuciones
+      Verifica que un artefacto no haya sido alterado.
+    </p>
+    <a class="btn"
+       href="https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_verify_seal.ipynb"
+       target="_blank">
+       Abrir verificador
+    </a>
+  </div>
+
+  <div class="card">
+    <h2>Estructura mínima</h2>
+    <p>
+      <code>/colab</code> — lanzadores Colab<br>
+      <code>/code</code> — programa principal<br>
+      <code>/tools</code> — sellado y verificación<br>
+      <code>/schema</code> — esquema de datos<br>
+      <code>/ledger</code> — registro auditable
     </p>
   </div>
 
