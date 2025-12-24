@@ -1,51 +1,69 @@
-# Gaia-Σ (TCDS) — Índice Operativo con acceso directo a Colab
+# TCDS — Índice Operativo (Evaluación Técnica)
 
-Repositorio de evaluación técnica: artefacto ejecutable, auditable y no intrusivo.  
-Enfoque: **riesgo causal previo** mediante coherencia y caída entrópica (ΔH), con sellado verificable.
+Repositorio técnico para evaluación independiente de **estados críticos previos**
+mediante análisis de coherencia y reducción entrópica sobre **datos sísmicos públicos**
+(USGS / IRIS).
 
----
+El sistema es:
+- No intrusivo  
+- Reproducible  
+- Auditable  
+- Ejecutable directamente en la nube (Google Colab)
 
-## 🚀 Acceso directo (Colab)
-
-> **REPO_URL (ajústalo solo si cambias owner/nombre):**  
-> `https://github.com/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO`
-
-### 1) Ejecutar el programa principal (AERC — one-shot)
-Archivo: `code/code.py`
-
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
-https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/code/code.py
-)
-
-**Qué hace**
-- Ingesta manual CSV (si lo proporcionas) o fallback automático (USGS/IRIS).
-- Calcula series ΔH(t) + persistencia de bloqueo.
-- Genera **JSON sellado (SHA256)** y un **GIF forense**.
+No requiere instalación local.
 
 ---
 
-### 2) Verificar sello criptográfico (integridad)
-Archivo: `tools/verify_seal.py`
+## 🚀 Ejecución directa en Google Colab
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
-https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/tools/verify_seal.py
-)
+> **Importante**  
+> Los accesos se realizan mediante notebooks lanzadores (`.ipynb`), que preparan
+> el entorno y ejecutan los programas del repositorio.
 
 ---
 
-### 3) Generar sello criptográfico (hash / firma local del artefacto)
-Archivo: `tools/make_seal.py`
+### 1) Programa principal — AERC (ejecución completa)
+
+Ejecuta el análisis completo en una sola corrida:
+- Ingesta de datos
+- Cálculo de métricas internas
+- Generación de artefactos verificables (JSON, hash, visuales)
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
-https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/tools/make_seal.py
+https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_AERC.ipynb
 )
 
 ---
 
-## ▶️ Ejecución rápida en Colab (recomendada)
+### 2) Verificación de integridad (sello criptográfico)
 
-1) Abre el botón **AERC — one-shot (code.py)**.  
-2) En la primera celda, ejecuta esto para preparar el entorno:
+Permite comprobar que un resultado no ha sido alterado.
 
-```bash
-!pip -q install -r https://raw.githubusercontent.com/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/main/requirements.txt
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_verify_seal.ipynb
+)
+
+---
+
+### 3) Generación de sello criptográfico
+
+Genera el hash asociado a una corrida específica para trazabilidad.
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](
+https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_make_seal.ipynb
+)
+
+---
+
+## ▶️ Flujo recomendado de uso
+
+1. Ejecutar **AERC**
+2. Revisar resultados generados
+3. Generar sello criptográfico
+4. Verificar integridad del artefacto
+
+Cada paso es independiente y repetible.
+
+---
+
+## 📁 Estructura del repositorio
