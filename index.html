@@ -1,142 +1,338 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TCDS — Índice Operativo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    body {
+    :root{
+      --bg:#0e1116;
+      --panel:#151922;
+      --panel2:#10141b;
+      --border:#222;
+      --text:#e6e6e6;
+      --muted:#c9c9c9;
+      --muted2:#8b949e;
+      --blue:#1f6feb;
+      --blue2:#388bfd;
+      --green:#2ea043;
+      --warn:#d29922;
+    }
+    *{ box-sizing:border-box; }
+    body{
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, sans-serif;
-      background: #0e1116;
-      color: #e6e6e6;
-      margin: 0;
-      line-height: 1.6;
+      background:var(--bg);
+      color:var(--text);
+      margin:0;
+      line-height:1.6;
     }
-    header {
-      padding: 2.5rem 1.5rem;
-      border-bottom: 1px solid #222;
+    header{
+      padding:2.2rem 1.5rem 1.6rem;
+      border-bottom:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(31,111,235,.10), rgba(14,17,22,0));
     }
-    h1 {
-      margin: 0 0 0.5rem 0;
-      font-size: 1.9rem;
-      font-weight: 600;
+    .wrap{ max-width:1100px; margin:0 auto; }
+    h1{
+      margin:0 0 .35rem 0;
+      font-size:1.9rem;
+      font-weight:650;
+      letter-spacing:.2px;
     }
-    p {
-      max-width: 900px;
-      color: #c9c9c9;
+    .sub{
+      margin:.2rem 0 0;
+      color:var(--muted);
+      max-width:950px;
     }
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem 1.5rem;
+    main{ padding:1.6rem 1.5rem 2rem; }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:1rem;
+      align-items:stretch;
     }
-    .card {
-      background: #151922;
-      border: 1px solid #222;
-      border-radius: 10px;
-      padding: 1.6rem;
-      margin-bottom: 1.5rem;
+    .card{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:1.25rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,.15);
     }
-    .card h2 {
-      margin-top: 0;
-      font-size: 1.25rem;
+    .card h2{
+      margin:.1rem 0 .45rem 0;
+      font-size:1.15rem;
     }
-    .btn {
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.6rem 1.1rem;
-      background: #1f6feb;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 500;
+    .card p{ margin:.2rem 0 1rem; color:var(--muted); }
+    .span-6{ grid-column: span 6; }
+    .span-12{ grid-column: span 12; }
+    @media (max-width: 860px){
+      .span-6{ grid-column: span 12; }
     }
-    .btn:hover {
-      background: #388bfd;
+
+    .btnrow{ display:flex; gap:.6rem; flex-wrap:wrap; }
+    a.btn{
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      padding:.62rem 1rem;
+      border-radius:9px;
+      text-decoration:none;
+      font-weight:600;
+      background:var(--blue);
+      color:#fff;
+      border:1px solid rgba(255,255,255,.08);
+      transition:.15s ease;
+      user-select:none;
     }
-    footer {
-      border-top: 1px solid #222;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.85rem;
-      color: #8b949e;
+    a.btn:hover{ background:var(--blue2); transform: translateY(-1px); }
+    a.ghost{
+      background:transparent;
+      border:1px solid var(--border);
+      color:var(--text);
     }
-    code {
-      background: #0b0f14;
-      padding: 0.15rem 0.35rem;
-      border-radius: 4px;
-      font-size: 0.9em;
+    a.ghost:hover{
+      border-color:rgba(56,139,253,.6);
+      transform: translateY(-1px);
     }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+      padding:.25rem .6rem;
+      border-radius:999px;
+      background:var(--panel2);
+      border:1px solid var(--border);
+      color:var(--muted2);
+      font-size:.85rem;
+      margin:.3rem .35rem 0 0;
+    }
+
+    .steps{
+      margin:0;
+      padding-left:1.2rem;
+      color:var(--muted);
+    }
+    code, .codebox{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+    .codebox{
+      background:#0b0f14;
+      border:1px solid var(--border);
+      border-radius:10px;
+      padding:.85rem;
+      color:#d0d7de;
+      overflow:auto;
+    }
+    .small{ font-size:.92rem; color:var(--muted2); margin-top:.35rem; }
+
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:18px;
+      transform:translateX(-50%);
+      background:#0b0f14;
+      border:1px solid var(--border);
+      color:var(--text);
+      padding:.7rem 1rem;
+      border-radius:12px;
+      box-shadow:0 20px 40px rgba(0,0,0,.35);
+      opacity:0;
+      pointer-events:none;
+      transition:.18s ease;
+      font-size:.95rem;
+    }
+    .toast.show{ opacity:1; }
+    footer{
+      border-top:1px solid var(--border);
+      padding:1.2rem 1.5rem;
+      color:var(--muted2);
+      font-size:.9rem;
+    }
+
+    .kbd{
+      display:inline-block;
+      padding:.12rem .38rem;
+      border:1px solid var(--border);
+      border-bottom-width:2px;
+      background:var(--panel2);
+      border-radius:6px;
+      font-size:.85rem;
+      color:var(--muted2);
+    }
+    .tag-ok{ color:#d1fae5; }
+    .tag-warn{ color:#fde68a; }
   </style>
 </head>
 
 <body>
 
 <header>
-  <h1>TCDS — Índice Operativo</h1>
-  <p>
-    Página de entrada al repositorio técnico para evaluación independiente
-    de estados críticos previos mediante coherencia y reducción entrópica,
-    utilizando datos sísmicos públicos.
-  </p>
+  <div class="wrap">
+    <h1>TCDS — Índice Operativo</h1>
+    <p class="sub">
+      Ejecución reproducible en la nube (Google Colab). Tres acciones: <b>correr</b>, <b>sellar</b> y <b>verificar</b>.
+      No se instala nada localmente.
+    </p>
+    <div>
+      <span class="pill">Datos: USGS / IRIS</span>
+      <span class="pill">Ejecución: Colab (.ipynb)</span>
+      <span class="pill">Integridad: SHA256</span>
+    </div>
+  </div>
 </header>
 
-<main>
+<main class="wrap">
+  <div class="grid">
 
-  <div class="card">
-    <h2>1) Programa principal (AERC)</h2>
-    <p>
-      Ejecuta el análisis completo en Google Colab:
-      ingesta, métricas y generación de artefactos verificables.
-    </p>
-    <a class="btn"
-       href="https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_AERC.ipynb"
-       target="_blank">
-       Abrir en Google Colab
-    </a>
+    <div class="card span-6">
+      <h2>1) Ejecutar el sistema (AERC)</h2>
+      <p>
+        Abre el notebook lanzador, instala dependencias, descarga <code>code/code.py</code> y lo ejecuta.
+        Aquí es donde verás “correr” el sistema.
+      </p>
+      <div class="btnrow">
+        <a class="btn" target="_blank" rel="noopener"
+           href="https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_AERC.ipynb">
+          ▶ Abrir en Colab
+        </a>
+        <a class="ghost btn" target="_blank" rel="noopener"
+           href="https://github.com/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_AERC.ipynb">
+          Ver notebook
+        </a>
+      </div>
+      <div class="small">
+        En Colab: <span class="kbd">Entorno de ejecución</span> → <span class="kbd">Ejecutar todas</span>
+      </div>
+    </div>
+
+    <div class="card span-6">
+      <h2>2) Generar sello (SHA256)</h2>
+      <p>
+        Genera una huella criptográfica del archivo de resultados (ej. <code>result.json</code>) y crea <code>.sha256</code>.
+      </p>
+      <div class="btnrow">
+        <a class="btn" target="_blank" rel="noopener"
+           href="https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_make_seal.ipynb">
+          🔐 Sellar en Colab
+        </a>
+        <button class="btn ghost" onclick="copyText('https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_make_seal.ipynb')">
+          Copiar link
+        </button>
+      </div>
+      <div class="small">
+        Resultado esperado: <span class="tag-ok">hash SHA256</span> + archivo <code>archivo.ext.sha256</code>
+      </div>
+    </div>
+
+    <div class="card span-6">
+      <h2>3) Verificar integridad</h2>
+      <p>
+        Verifica si el archivo coincide con su sello. Si no coincide, el archivo fue modificado.
+      </p>
+      <div class="btnrow">
+        <a class="btn" target="_blank" rel="noopener"
+           href="https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_verify_seal.ipynb">
+          ✅ Verificar en Colab
+        </a>
+        <button class="btn ghost" onclick="copyText('https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_verify_seal.ipynb')">
+          Copiar link
+        </button>
+      </div>
+      <div class="small">
+        Resultado esperado: <span class="tag-ok">OK — INTEGRIDAD VERIFICADA</span> o <span class="tag-warn">FAIL — ARCHIVO MODIFICADO</span>
+      </div>
+    </div>
+
+    <div class="card span-6">
+      <h2>Flujo recomendado (en 60 segundos)</h2>
+      <ol class="steps">
+        <li>Abre <b>AERC</b> → Ejecutar todas.</li>
+        <li>Descarga/ubica el resultado generado (ej. <code>result.json</code>).</li>
+        <li>Abre <b>Generar sello</b> → sube el archivo → ejecuta la celda.</li>
+        <li>Abre <b>Verificar</b> → sube archivo + <code>.sha256</code> → ejecuta.</li>
+      </ol>
+      <div class="small">
+        Nota: si quieres evitar subir/descargar entre pestañas, puedes guardar los resultados en Google Drive dentro de Colab.
+      </div>
+    </div>
+
+    <div class="card span-12">
+      <h2>Licencia y avisos</h2>
+      <p>Acceso directo a los documentos legales del repositorio:</p>
+      <div class="btnrow">
+        <a class="btn ghost" target="_blank" rel="noopener"
+           href="https://github.com/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/LICENSE.md">
+          📄 LICENSE.md
+        </a>
+        <a class="btn ghost" target="_blank" rel="noopener"
+           href="https://github.com/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/NOTICE.md">
+          📌 NOTICE.md
+        </a>
+      </div>
+      <div class="small">
+        Si estás evaluando para uso institucional, revisa primero estos documentos.
+      </div>
+    </div>
+
+    <div class="card span-12">
+      <h2>Contacto (autor)</h2>
+      <div class="codebox" id="contactBlock">
+Nombre: Genaro Carrasco Ozuna
+ORCID: https://orcid.org/0009-0005-6358-9910
+Email: geozunac3536@gmail.com
+GitHub: https://github.com/geozunac3536-jpg
+WhatsApp / Tel: +52 812 598 9868
+      </div>
+      <div class="btnrow" style="margin-top:.8rem;">
+        <button class="btn ghost" onclick="copyContact()">Copiar contacto</button>
+        <button class="btn ghost" onclick="copyText('https://orcid.org/0009-0005-6358-9910')">Copiar ORCID</button>
+        <button class="btn ghost" onclick="copyText('geozunac3536@gmail.com')">Copiar email</button>
+        <button class="btn ghost" onclick="copyText('+528125989868')">Copiar WhatsApp</button>
+      </div>
+      <div class="small">
+        *Para WhatsApp, puedes pegar <code>+528125989868</code> directo en la app.*
+      </div>
+    </div>
+
   </div>
-
-  <div class="card">
-    <h2>2) Generar sello criptográfico</h2>
-    <p>
-      Crea el hash de una corrida específica para asegurar trazabilidad.
-    </p>
-    <a class="btn"
-       href="https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_make_seal.ipynb"
-       target="_blank">
-       Abrir generador de sello
-    </a>
-  </div>
-
-  <div class="card">
-    <h2>3) Verificar integridad</h2>
-    <p>
-      Verifica que un artefacto no haya sido alterado.
-    </p>
-    <a class="btn"
-       href="https://colab.research.google.com/github/geozunac3536-jpg/TCDS_CENAPRED_COLLAP_REPO/blob/main/colab/run_verify_seal.ipynb"
-       target="_blank">
-       Abrir verificador
-    </a>
-  </div>
-
-  <div class="card">
-    <h2>Estructura mínima</h2>
-    <p>
-      <code>/colab</code> — lanzadores Colab<br>
-      <code>/code</code> — programa principal<br>
-      <code>/tools</code> — sellado y verificación<br>
-      <code>/schema</code> — esquema de datos<br>
-      <code>/ledger</code> — registro auditable
-    </p>
-  </div>
-
 </main>
 
 <footer>
-  Proyecto TCDS · Evaluación técnica reproducible · Datos públicos
+  <div class="wrap">
+    TCDS_CENAPRED_COLLAP_REPO · Página operativa (GitHub Pages) · Ejecución en Colab
+  </div>
 </footer>
+
+<div id="toast" class="toast">Copiado ✅</div>
+
+<script>
+  function showToast(msg){
+    const t = document.getElementById('toast');
+    t.textContent = msg || 'Copiado ✅';
+    t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'), 1200);
+  }
+
+  async function copyText(text){
+    try{
+      await navigator.clipboard.writeText(text);
+      showToast('Copiado ✅');
+    }catch(e){
+      // Fallback
+      const ta=document.createElement('textarea');
+      ta.value=text; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast('Copiado ✅');
+    }
+  }
+
+  function copyContact(){
+    const txt = document.getElementById('contactBlock').innerText.trim();
+    copyText(txt);
+  }
+</script>
 
 </body>
 </html>
